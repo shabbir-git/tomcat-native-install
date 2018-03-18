@@ -23,6 +23,6 @@ Steps for installation
 
 Run below command by replacing host address and domain user account.
 
-**ansible-playbook -i <host name or ip>, -u <domain user> install.yml**
+**ansible-playbook -i \<host name or ip>, -u \<domain user> install.yml**
   
 **Note:** There is a comma after host address.
