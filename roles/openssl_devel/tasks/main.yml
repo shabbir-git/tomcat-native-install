@@ -1,0 +1,18 @@
+---
+- name: "Check and delete if old openssl build directory exists"
+  file: path=/usr/src/openssl-devel state=absent
+
+- name: "Copy source to server"
+  copy: src=source/{{ openssl_source_file }} dest=/usr/src
+
+- name: "Extract source file"
+  shell: 'mkdir /usr/src/openssl-devel && tar -xzvf /usr/src/"{{ openssl_source_file }}" -C /usr/src/openssl-devel --strip-components=1'
+
+- name: "Configure build and set environment"
+  shell: 'chdir=/usr/src/openssl-devel ./config --prefix=/opt/libs zlib-dynamic shared'
+
+- name: "Run make for openssl"
+  shell: 'chdir=/usr/src/openssl-devel make'
+
+- name: "Install openssl"
+  shell: 'chdir=/usr/src/openssl-devel make install'

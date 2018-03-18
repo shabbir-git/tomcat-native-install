@@ -1,0 +1,10 @@
+---
+- name: "Install tomcat native and it's dependencies from source"
+  hosts: all
+  vars_files:
+  - env.yml
+
+  roles:
+  - openssl_devel
+  - apr_devel
+  - tomcat_native
