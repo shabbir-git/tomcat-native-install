@@ -4,6 +4,13 @@
   vars_files:
   - env.yml
 
+  pre_tasks:
+  - name: "Take backup of old tomcat native"
+    shell: ' mv /opt/tomcat-native /opt/tomcat-native.old'
+
+  - name: "Take backup of old libs"
+    shell: 'mv /opt/libs /opt/libs.old'
+
   roles:
   - openssl_devel
   - apr_devel
