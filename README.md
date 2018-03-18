@@ -18,7 +18,7 @@ Then, it will install openssl and apr in /opt/libs directory. After that it will
 
 **Note:** It will also create a backup of already installed libs and tomcat-native by adding .old as suffix.
 
-Installation steps
+Installation Steps
 ------------------
 
 Run below command by replacing host address and domain user account.
